@@ -16,7 +16,7 @@ const google = () => {
         <GoogleLogin 
             clientId="919523538975-d30ovbeosvqjqo76t2fim3ojp0a3gbim.apps.googleusercontent.com"
             buttonText="Login with Google"
-            onSuccess={(user) => doRequest({email:user.profileObj.email,password:user.googleId})}
+            onSuccess={(user) => console.log(user)}
         />
         {errors}
     </div>
