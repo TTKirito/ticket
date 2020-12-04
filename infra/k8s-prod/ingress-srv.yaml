@@ -11,7 +11,7 @@ metadata:
     networking.gke.io/managed-certificates: certificatethuongtonnet
 spec:
   rules:
-    - host: ticketing.dev
+    - host: thuanton.tk
       http:
         paths:
           - path: /api/payments/?(.*)
