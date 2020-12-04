@@ -6,7 +6,7 @@ import { User } from '../models/user'
 
 const router = express.Router()
 
-router.post('/api/user/googlelogin', [
+router.post('/api/users/googlelogin', [
     body('email')
         .isEmail()
         .withMessage('Email must be valid'),
