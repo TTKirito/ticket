@@ -6,7 +6,7 @@ import GoogleLogin from 'react-google-login'
 
 const google = () => {
     const { doRequest , errors } = useRequest({
-        url: '/api/user/googlelogin',
+        url: '/api/users/googlelogin',
         method: 'post',
         body: {},
         onSuccess: () => Router.push('/')
