@@ -34,7 +34,7 @@ spec:
             backend:
               serviceName: client-srv
               servicePort: 3000
-    tls:
-      - hosts:
-          - thuanton.tk
-        secretName: cert-secret
+  tls:
+    - hosts:
+        - www.thuongton.net
+      secretName: cert-secret
