@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: cert
+spec:
+  secretName: cert-secret
+  issuerRef:
+    name: cert-issuer
+    kind: Issuer
+  dnsNames:
+    - thuanton.tk

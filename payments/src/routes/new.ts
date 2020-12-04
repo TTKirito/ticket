@@ -53,11 +53,11 @@ async (req: Request, res: Response)=>{
 
     const smtpTransport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        port: 587,
+        secure: false,
         auth:{
-            user: 'thuanton98@gmail.com',
-            pass: 'thuan123321'
+            user:'thuanton98@gmail.com',
+            pass:'thuan123321'
         }
     })
 

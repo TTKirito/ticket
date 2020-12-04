@@ -1,0 +1,23 @@
+name: deploy-expiration
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'expiration/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_KEY }}
+          export_default_credentials: true
+      - run: gcloud auth configure-docker
+      - run: cd expiration && docker build -t us.gcr.io/${{secrets.GCP_PROJECT_ID}}/expiration .
+      - run: docker push us.gcr.io/${{secrets.GCP_PROJECT_ID}}/expiration
+      - run: gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project ${{secrets.GCP_PROJECT_ID}}
+      - run: kubectl rollout restart Deployment expiration-depl

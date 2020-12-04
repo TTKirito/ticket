@@ -20,7 +20,7 @@ const setup = async () =>{
     const data: OrderCreatedEvent['data'] = {
         id: new mongoose.Types.ObjectId().toHexString(),
         version: 0,
-        expiresAt: new Date(),
+        expiresAt: 'kkk',
         status: OrderStatus.created,
         userId: 'adsf',
         ticket:{
