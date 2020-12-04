@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: cert-issuer
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: 
+    privateKeySecretRef:
+      name: dns-prod-issuer
+    solvers:
+    - dns01:
+        cloudDNS:
+          # The ID of the GCP project
+          project: ticket-297601
+          # This is the secret used to access the service account
+          serviceAccountSecretRef:
+            name: clouddns-dns01-solver-svc-acct
+            key: ticket-297601-e1421c9b1066.json
