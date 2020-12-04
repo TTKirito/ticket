@@ -36,5 +36,5 @@ spec:
               servicePort: 3000
     tls:
       - hosts:
-          - www.thuongton.net
+          - thuanton.tk
         secretName: cert-secret

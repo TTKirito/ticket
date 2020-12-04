@@ -52,7 +52,9 @@ async (req: Request, res: Response)=>{
     await payment.save()
 
     const smtpTransport = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
         auth:{
             user:'thuanton98@gmail.com',
             pass:'thuan123321'
