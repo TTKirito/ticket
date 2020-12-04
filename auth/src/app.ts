@@ -8,6 +8,7 @@ import { signinRouter } from './routes/signin'
 import { currentUserRouter } from './routes/current-user'
 import { signoutRouter } from './routes/signout'
 import { errorHandler, NotFoundError } from '@sgticket1thuan/common'
+import { googleRouter } from './routes/google'
 
 const app = express()
 app.use(bodyParser.urlencoded({
@@ -25,6 +26,7 @@ app.use(signupRouter)
 app.use(signinRouter)
 app.use(currentUserRouter)
 app.use(signoutRouter)
+app.use(googleRouter)
 
 app.all('*', async (req, res) => {
     throw new NotFoundError()
