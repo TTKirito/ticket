@@ -11,12 +11,15 @@ const google = () => {
         body: {},
         onSuccess: () => Router.push('/')
     })
+    const Response=(event)=>{
+        console.log(event)
+    }
 
     return <div>
         <GoogleLogin 
             clientId="919523538975-d30ovbeosvqjqo76t2fim3ojp0a3gbim.apps.googleusercontent.com"
             buttonText="Login with Google"
-            onSuccess={(user) => console.log(user)}
+            onSuccess={Response}
         />
         {errors}
     </div>
