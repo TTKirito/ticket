@@ -18,7 +18,7 @@ router.post('/api/user/googlelogin', [
 requestValidate,
 async (req: Request, res: Response) => {
     const { email, password } = req.body
-    console.clear()
+
     const existingUser = await User.findOne({ email })
     if(!existingUser) {
         const user = User.build({
