@@ -9,7 +9,7 @@ const google = () => {
         url: '/api/users/googlelogin',
         method: 'post',
         body: {},
-        onSuccess: (google) => console.log(google)
+        onSuccess: () => Router.push('/')
     })
 
     return <div>
